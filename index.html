@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    <form>
+      <h2>Survey Form</h2>
+      <div class="form-group firstname">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" placeholder="Enter your first name">
+      </div>
+      <div class="form-group lastname">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" placeholder="Enter your last name">
+      </div>
+      
+      <div class="form-group email">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" placeholder="Enter your email address">
+      </div>
+      
+      <div class="form-group date">
+        <label for="date">Birth Date</label>
+        <input type="date" id="date" placeholder="Select your date">
+      </div>
+      <div class="form-group country">
+        <label for="country">Country</label>
+        <select id="country">
+          <option value="" selected disabled>Select your country</option>
+          <option value="Male">India</option>
+          <option value="Female">Us</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group phone">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter your Phone Number">
+      </div>
+      
+      <div class="gender-details">
+        <span class="gender-title">Gender</span>
+        <input type="radio" name="gender" id="dot-1">
+        <input type="radio" name="gender" id="dot-2">
+        <input type="radio" name="gender" id="dot-3">
+        
+        <div class="category">
+          <label for="dot-1">
+          <span class="dot one"></span>
+          <span class="gender">Male</span>
+        </label>
+        <label for="dot-2">
+          <span class="dot two"></span>
+          <span class="gender">Female</span>
+        </label>
+        <label for="dot-3">
+          <span class="dot three"></span>
+          <span class="gender">Prefer not to say</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group profession">
+        <label for="Profession">Profession</label>
+        <input type="text" id="profession" placeholder="Enter your Profession">
+      </div>
+
+
+      <div class="form-group submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
