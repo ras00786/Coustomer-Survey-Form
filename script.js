@@ -23,6 +23,8 @@ const handleFormData = (e) => {
     const dateInput = document.getElementById("date");
     const countryInput = document.getElementById("country");
     const phoneInput = document.getElementById("phone");
+    const professioninput = document.getElementById("profession")
+    
 
     // Getting trimmed values from input fields
     const firstname = firstnameInput.value.trim();
@@ -33,9 +35,20 @@ const handleFormData = (e) => {
     const date = dateInput.value;
     const country = countryInput.value;
     const phone = phoneInput.value;
+    const profession = professioninput.value.trim();
     // Regular expression pattern for email validation
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     const phonePattern = /^\d{10}$/;
+    const radios = document.getElementsByName("gender");
+    let formValid = false;
+
+    let i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    
 
     // Clearing previous error messages
     document.querySelectorAll(".form-group .error").forEach(field => field.classList.remove("error"));
@@ -57,7 +70,18 @@ const handleFormData = (e) => {
     if (phone.length !== 10 || isNaN(phone)) {
         showError(phoneInput, "Phone number should be 10 digits");
     }
-    
+    if (profession === "") {
+        showError(professioninput, "Enter your Profession");
+    }
+    if (country === "") {
+        showError(countryInput, "Select your Country");
+    }
+    if (!formValid) {
+        const category = document.querySelector(".category");
+        showError(category, "Please select a gender");
+        return;
+    }
+   
 
     // Checking for any remaining errors before form submission
     const errorInputs = document.querySelectorAll(".form-group .error");
@@ -65,18 +89,13 @@ const handleFormData = (e) => {
 
     // Submitting the form
     form.submit();
-}
+    showSuccessMessage();
+};
 
-// phoneInput.addEventListener('input', (e) => {
-//     if (phoneInput.value.length > 10) {
-//         phonerInput.value = phoneInput.value.slice(0, 10);
-//     }
-// });
+const showSuccessMessage = () => {
+    alert("submitted successfully!");
+};
 
-// Toggling password visibility
-
-
-// Handling form submission event
 form.addEventListener("submit", handleFormData);
 
 
@@ -106,3 +125,5 @@ const lastnameInput = document.getElementById("lastname");
 lastnameInput.addEventListener('input', (e) => {
     lastnameInput.value = lastnameInput.value.replace(/[0-9]/g, '');
 });
+
+
