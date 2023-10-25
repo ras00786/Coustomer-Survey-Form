@@ -109,7 +109,7 @@ body {
   }
   
   .submit-btn input {
-    width: 100%;
+    width: 50%;
     background: #4CAF50;
     color: #fff;
     border: none;
@@ -117,11 +117,33 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    margin-left: 10px;
   }
   
   .submit-btn input:hover {
     background: #45a049;
   }
+  .reset-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .reset-btn input {
+    width: 50%;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 90px;
+  }
+  
+  .reset-btn input:hover {
+    background: #45a049;
+  }
+  
   
   .error {
     border: 1px solid red;
@@ -134,3 +156,9 @@ body {
     display: block;
   }
   
+  .container {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    
+  }
